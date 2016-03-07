@@ -4,7 +4,7 @@
 
 
 void afficher(int t[MAX][MAX])
-//affiche un tableau à 2 dimensions
+//affiche un tableau Ã  2 dimensions
 {
     int i,j,k;
 
@@ -29,7 +29,7 @@ void afficher(int t[MAX][MAX])
 }
 
 int erreur(int t[])
-//prend 10 valeurs et verifie qu'il n'y en ai pas 2 ou plus de la meme valeur, de 1 à 9
+//prend 10 valeurs et verifie qu'il n'y en ai pas 2 ou plus de la meme valeur, de 1 Ã  9
 {
     int k;
     for(k=1;k<=9;k++)
@@ -45,7 +45,7 @@ int erreur(int t[])
 
 int verifier(int t[MAX][MAX])
 {
-    //verifie que les valeurs ne dépassent pas 9 (MAX)
+    //verifie que les valeurs ne dÃ©passent pas 9 (MAX)
     int i,j,k,valeurs[10]={0,0,0,0,0,0,0,0,0,0},petitCarre;
     for(i=0;i<MAX;i++)
     {
@@ -96,7 +96,7 @@ int verifier(int t[MAX][MAX])
             }
         }
     }
-    //controle des 9 carrés
+    //controle des 9 carrÃ©s
     for(petitCarre=0;petitCarre<9;petitCarre++)
     {
         int valeurs[10]={0,0,0,0,0,0,0,0,0,0};
@@ -118,7 +118,7 @@ int verifier(int t[MAX][MAX])
 
 
 int disponible(int ligne, int colonne, int grille[MAX][MAX])
-//verifie combien de valeurs sont possibles pour une case donnée et renvoie la valeur en question si elle est unique.
+//verifie combien de valeurs sont possibles pour une case donnÃ©e et renvoie la valeur en question si elle est unique.
 //ne renvoie rien si il existe plusieurs valeurs, et renvoie 0 si la case est deja remplie.
 {
     int i,j,carre,nbrDispo=0,chiffreDispo=0;
@@ -137,8 +137,8 @@ int disponible(int ligne, int colonne, int grille[MAX][MAX])
         if (grille[j][colonne]!=0)dispo[grille[j][colonne]-1]=grille[j][colonne];
     }
 
-    //verifie les 9 carrés
-    carre=(((ligne/3)*3)+colonne/3); //("carre" represente lequel des 9 carrés est concerné, allant de 0 à 8 (de gauche à droite, de haut en bas)
+    //verifie les 9 carrÃ©s
+    carre=(((ligne/3)*3)+colonne/3); //("carre" represente lequel des 9 carrÃ©s est concernÃ©, allant de 0 Ã  8 (de gauche Ã  droite, de haut en bas)
     for(i=(carre/3)*3;i<(carre/3)*3+3;i++)
     {
         for(j=(carre%3)*3;j<(carre%3)*3+3;j++)
@@ -169,7 +169,7 @@ int disponible(int ligne, int colonne, int grille[MAX][MAX])
 }
 
 int remplir(int tab[MAX][MAX])
-//rempli toutes les cases du tableau ou il existe qu'une possibilité (grace à disponible()
+//rempli toutes les cases du tableau ou il existe qu'une possibilitÃ© (grace Ã  disponible()
 {
     int i,j,reponse=0;
     for(i=0;i<MAX;i++)
@@ -185,7 +185,7 @@ int remplir(int tab[MAX][MAX])
             }
         }
     }
-
+return 0;
 }
 
 int casesVides(int t[MAX][MAX])
@@ -230,7 +230,7 @@ int main()
 
     nbrDepart = ((sizeof(depart)/sizeof(int))/3);
 
-    //met toutes les valeurs de tab[] à 0:
+    //met toutes les valeurs de tab[] Ã  0:
     for(i=0;i<MAX;i++)
     {
         for(j=0;j<MAX;j++)
@@ -260,7 +260,7 @@ int main()
         return 1;
     }
 
-    afficher(tab); //affiche le tableau tel qu'il est au début.
+    afficher(tab); //affiche le tableau tel qu'il est au dÃ©but.
 
     while(casesVides(tab))
     //tant qu'il reste des cases vides, faire:
